@@ -1,3 +1,4 @@
+All the time I spent on this project:
 10/16/23
 ~35 mins
     *Project Planning
@@ -73,3 +74,21 @@
 
 25 minutes
  * Created rust-final-directory
+
+30 mins
+ * Read Rust std docs
+ * tried to fix slow compile
+ * module trouble
+
+ 10/28/23
+ 25 mins
+ * Review and expirimentation
+
+ 25+ mins
+ * File reading practice
+
+25+ minutes
+* File writing
+* Getting user input
+
+~ 1 Hour * Created final program

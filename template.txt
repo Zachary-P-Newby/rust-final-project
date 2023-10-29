@@ -1,0 +1,40 @@
+I/O program from tutorial follow along - used as guide for creating final program:
+
+
+let output = File::create(path);
+    let mut output:File = match output{
+        Ok(file) => file,
+        Err(error) =>{
+            panic!("Woah!")
+        },
+    }; */
+write!(output, "Bananas,\nChicken,\nMilk - 2 Gallons,\nPudding Mix - Vanilla,\nKibby Bites for Eevee\nLettuce,\nToilet Paper").expect("Failed to write to file, eevee sad."); */
+
+    let input = File::open(path).unwrap();
+    let buffered = BufReader::new(input);
+
+    for line in buffered.lines(){
+        println!("{}", line.unwrap());
+    }
+
+    
+    let path2: &str = "bee_movie.txt";
+    let output2 = File::open(path2).unwrap();
+
+    let buff2 = BufReader::new(output2);
+
+    for line in buff2.lines(){
+        println!("{}", line.unwrap());
+    }
+
+    let output3 = File::open("rand.txt");
+    let output3 = match output3 {
+        Ok(file) => file,
+        Err(error) => match error.kind() {
+            ErrorKind::NotFound => match File::create("rand.txt") {
+                Ok(fc) => fc,
+                Err(e) => panic!("Can't create file: {:?}", e),
+            },
+            _other_error => panic!("Problem opening file : {:?}", error),
+        },
+    };
